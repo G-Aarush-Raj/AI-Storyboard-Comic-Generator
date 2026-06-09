@@ -1,21 +1,20 @@
 from services.grok_client import client, MODEL
 
-def generate_story(story_idea):
+def generate_story(story_idea, genre):
 
     prompt = f"""
-    Create a compelling story.
+Genre: {genre}
 
-    Idea:
-    {story_idea}
+Story Idea:
+{story_idea}
 
-    Generate:
-
-    1. Title
-    2. Story Summary
-    3. Beginning
-    4. Conflict
-    5. Resolution
-    """
+Generate:
+1. Title
+2. Story Summary
+3. Beginning
+4. Conflict
+5. Resolution
+"""
 
     response = client.chat.completions.create(
         model=MODEL,
